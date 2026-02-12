@@ -1,0 +1,53 @@
+version: 1
+
+fields:
+  - id: name
+    obligatory: true
+    prompt: "ФИО"
+    type: string
+
+  - id: birthday
+    obligatory: true
+    prompt: "Дата рождения"
+    type: date
+  
+  - id: department
+    obligatory: true
+    prompt: "Отделение"
+    type: enum
+    options:
+      - { key: kdo,  label: "КДО" }
+      - { key: diot, label: "ДиОТ" }
+      - { key: pulm, label: "пульм" }
+      - { key: revm, label: "ревм" }
+      - { key: kho,  label: "КХО" }
+
+  - id: card_number
+    obligatory: true
+    prompt: 
+  
+  - id: height
+    obligatory: true
+    prompt: "Рост"
+    type: int
+  
+  - id: weight
+    obligatory: true
+    prompt: "Масса тела"
+    type: int
+  
+  - id: aortic_sinus_diameter
+    obligatory: true
+    prompt: "Ао"
+    type: float
+    scale: 1
+  
+  - id: left_atrium
+    obligatory: true
+    prompt: "ЛП"
+    type: float
+    scale: 1
+
+compute: 
+  - id: body_surface_area
+    formula: "height^0.725 * w"
